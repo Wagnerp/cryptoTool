@@ -65,8 +65,8 @@ namespace CryptoTool
         {
             try
             {
-                byte[] byteArr = Conversions.ConvertToByteArray(compareTextBox.Text);//Encoding.Unicode.GetBytes(compareTextBox.Text); //Encoding.ASCII.GetBytes(compareTextBox.Text);
-                string byteArrStr = BitConverter.ToString(byteArr);//.GetBytes(compareTextBox.Text);
+                byte[] byteArr = Conversions.ConvertToByteArray(compareTextBox.Text); //Conversions.HexToBytes(compareTextBox.Text);
+                string byteArrStr = BitConverter.ToString(byteArr);
                 
                 if (String.Compare(checksumValueTextBox.Text, byteArrStr) == 0)
                 {
