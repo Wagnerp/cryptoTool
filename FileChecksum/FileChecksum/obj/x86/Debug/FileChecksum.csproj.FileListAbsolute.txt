@@ -1,0 +1,9 @@
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\bin\Debug\FileChecksum.exe
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\bin\Debug\FileChecksum.pdb
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.MainWindow.resources
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.Properties.Resources.resources
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.csproj.GenerateResource.Cache
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.exe
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.pdb
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\bin\Debug\FileChecksum.exe.config
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.csprojResolveAssemblyReference.cache
