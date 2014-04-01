@@ -32,7 +32,7 @@ namespace CryptoTool
                     case "SHA512":
                         hash = cryptoHash(new SHA512CryptoServiceProvider(), bs);
                         break;
-                }
+                }                
                 return hash;
             }
 

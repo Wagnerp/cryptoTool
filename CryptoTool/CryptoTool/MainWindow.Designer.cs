@@ -37,6 +37,11 @@
             this.filePathLabel = new System.Windows.Forms.Label();
             this.hashComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.compareTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.matchLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fileChecksumBtn
@@ -54,9 +59,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(238, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Hashed Value:";
+            this.label1.Text = "Hashed Value (32-bit, 2 digit hexidecimal values):";
             // 
             // openFileDialog
             // 
@@ -73,9 +78,10 @@
             // 
             // checksumValueTextBox
             // 
-            this.checksumValueTextBox.Location = new System.Drawing.Point(12, 200);
+            this.checksumValueTextBox.Location = new System.Drawing.Point(12, 219);
             this.checksumValueTextBox.Multiline = true;
             this.checksumValueTextBox.Name = "checksumValueTextBox";
+            this.checksumValueTextBox.ReadOnly = true;
             this.checksumValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.checksumValueTextBox.Size = new System.Drawing.Size(465, 77);
             this.checksumValueTextBox.TabIndex = 3;
@@ -117,11 +123,64 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Select hashing algorithm: ";
             // 
+            // compareTextBox
+            // 
+            this.compareTextBox.Location = new System.Drawing.Point(12, 343);
+            this.compareTextBox.Multiline = true;
+            this.compareTextBox.Name = "compareTextBox";
+            this.compareTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.compareTextBox.Size = new System.Drawing.Size(462, 78);
+            this.compareTextBox.TabIndex = 8;
+            this.compareTextBox.TextChanged += new System.EventHandler(this.compareTextBox_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Compare Against (Case Insensitive):";
+            // 
+            // matchLabel
+            // 
+            this.matchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.matchLabel.AutoSize = true;
+            this.matchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.matchLabel.Location = new System.Drawing.Point(397, 327);
+            this.matchLabel.Name = "matchLabel";
+            this.matchLabel.Size = new System.Drawing.Size(77, 13);
+            this.matchLabel.TabIndex = 10;
+            this.matchLabel.Text = "Not a Match";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 203);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Ex. 0F-8G-AB-06";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 327);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Ex. 0f8gab06";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 289);
+            this.ClientSize = new System.Drawing.Size(486, 429);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.matchLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.compareTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.hashComboBox);
             this.Controls.Add(this.filePathLabel);
@@ -148,6 +207,11 @@
         private System.Windows.Forms.Label filePathLabel;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox hashComboBox;
+        private System.Windows.Forms.TextBox compareTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label matchLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -12,3 +12,9 @@ C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\FileChecksum\obj\x
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\bin\Debug\CryptoTool.exe.config
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.exe
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.pdb
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\bin\Debug\CryptoTool.exe
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\bin\Debug\CryptoTool.pdb
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.csprojResolveAssemblyReference.cache
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.MainWindow.resources
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.Properties.Resources.resources
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\CryptoTool\CryptoTool\obj\x86\Debug\CryptoTool.csproj.GenerateResource.Cache

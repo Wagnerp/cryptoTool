@@ -18,6 +18,7 @@ namespace CryptoTool
         {
             InitializeComponent();
             LoadHashAlgorithms();
+            matchLabel.ForeColor = Color.Red;
         }
 
         private void LoadHashAlgorithms()
@@ -58,6 +59,31 @@ namespace CryptoTool
             else
                 MessageBox.Show("You must select a file to hash before computing the checksum.",
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void compareTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] byteArr = Conversions.ConvertToByteArray(compareTextBox.Text);//Encoding.Unicode.GetBytes(compareTextBox.Text); //Encoding.ASCII.GetBytes(compareTextBox.Text);
+                string byteArrStr = BitConverter.ToString(byteArr);//.GetBytes(compareTextBox.Text);
+                
+                if (String.Compare(checksumValueTextBox.Text, byteArrStr) == 0)
+                {
+                    matchLabel.Text = "Match";
+                    matchLabel.ForeColor = Color.Green;
+                }
+                else
+                {
+                    matchLabel.Text = "Not a Match";
+                    matchLabel.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in comparison of the hash value See message:\n" + 
+                    ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
