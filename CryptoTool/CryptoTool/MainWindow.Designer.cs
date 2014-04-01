@@ -1,4 +1,4 @@
-﻿namespace FileChecksum
+﻿namespace CryptoTool
 {
     partial class MainWindow
     {
@@ -100,12 +100,13 @@
             // 
             // hashComboBox
             // 
+            this.hashComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.hashComboBox.FormattingEnabled = true;
             this.hashComboBox.Location = new System.Drawing.Point(15, 116);
             this.hashComboBox.Name = "hashComboBox";
             this.hashComboBox.Size = new System.Drawing.Size(121, 21);
             this.hashComboBox.TabIndex = 6;
-            this.hashComboBox.Text = "MD5";
+            this.hashComboBox.SelectedIndexChanged += new System.EventHandler(this.hashComboBox_SelectedIndexChanged);
             // 
             // label2
             // 

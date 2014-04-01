@@ -7,3 +7,4 @@ C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.pdb
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\bin\Debug\FileChecksum.exe.config
 C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\obj\x86\Debug\FileChecksum.csprojResolveAssemblyReference.cache
+C:\Cygwin\home\Mason\Repositories\fileChecksum.git\FileChecksum\FileChecksum\bin\Debug\CryptoTool.exe.config
