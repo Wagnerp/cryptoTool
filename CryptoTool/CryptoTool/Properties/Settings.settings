@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FileChecksum.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CryptoTool.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="HashAlgorithms" Type="System.String" Scope="User">
@@ -8,6 +8,13 @@ SHA1
 SHA256
 SHA384
 SHA512</Value>
+    </Setting>
+    <Setting Name="EncryptionAlgorithms" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DES
+TripleDES
+RC2
+Rijndael
+RSA</Value>
     </Setting>
   </Settings>
 </SettingsFile>

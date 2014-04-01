@@ -11,71 +11,44 @@ namespace CryptoTool
     {
         public static string computeChecksum(string hashType, string filePath)
         {
-            string hash = "";
             using (FileStream fs = new FileStream(filePath, FileMode.Open))
             using (BufferedStream bs = new BufferedStream(fs))
             {
-                switch (hashType)
+                HashAlgorithm hashAlg = findHashAlgorithm(hashType);
+
+                using ((IDisposable)hashAlg)
                 {
-                    case "MD5":
-                        hash = cryptoHash(new MD5CryptoServiceProvider(), bs);
-                        break;
-                    case "SHA1":
-                        hash = cryptoHash(new SHA1CryptoServiceProvider(), bs);
-                        break;
-                    case "SHA256":
-                        hash = cryptoHash(new SHA256CryptoServiceProvider(), bs);
-                        break;
-                    case "SHA384":
-                        hash = cryptoHash(new SHA384CryptoServiceProvider(), bs);
-                        break;
-                    case "SHA512":
-                        hash = cryptoHash(new SHA512CryptoServiceProvider(), bs);
-                        break;
-                }                
-                return hash;
-            }
-
-        }
-
-        private static string cryptoHash(MD5CryptoServiceProvider cryptoProvider, BufferedStream bs)
-        {
-            using ((IDisposable)cryptoProvider)
-            {
-                return (BitConverter.ToString(cryptoProvider.ComputeHash(bs)));
+                    return (BitConverter.ToString(hashAlg.ComputeHash(bs)));
+                }
             }
         }
 
-        private static string cryptoHash(SHA1CryptoServiceProvider cryptoProvider, BufferedStream bs)
+        private static HashAlgorithm findHashAlgorithm(string hashType)
         {
-            using ((IDisposable)cryptoProvider)
-            {
-                return (BitConverter.ToString(cryptoProvider.ComputeHash(bs)));
-            }
-        }
+            HashAlgorithm ha;
 
-        private static string cryptoHash(SHA256CryptoServiceProvider cryptoProvider, BufferedStream bs)
-        {
-            using ((IDisposable)cryptoProvider)
+            switch (hashType)
             {
-                return (BitConverter.ToString(cryptoProvider.ComputeHash(bs)));
-            }
-        }
-
-        private static string cryptoHash(SHA384CryptoServiceProvider cryptoProvider, BufferedStream bs)
-        {
-            using ((IDisposable)cryptoProvider)
-            {
-                return (BitConverter.ToString(cryptoProvider.ComputeHash(bs)));
-            }
-        }
-
-        private static string cryptoHash(SHA512CryptoServiceProvider cryptoProvider, BufferedStream bs)
-        {
-            using ((IDisposable)cryptoProvider)
-            {
-                return (BitConverter.ToString(cryptoProvider.ComputeHash(bs)));
-            }
+                case "MD5":
+                    ha = new MD5CryptoServiceProvider();
+                    break;
+                case "SHA1":
+                    ha = new SHA1CryptoServiceProvider();
+                    break;
+                case "SHA256":
+                    ha = new SHA256CryptoServiceProvider();
+                    break;
+                case "SHA384":
+                    ha = new SHA384CryptoServiceProvider();
+                    break;
+                case "SHA512":
+                    ha = new SHA512CryptoServiceProvider();
+                    break;
+                default:
+                    ha = new MD5CryptoServiceProvider();
+                    break;
+            }  
+            return ha;
         }
     }
 }

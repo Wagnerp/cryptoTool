@@ -34,5 +34,17 @@ namespace CryptoTool.Properties {
                 this["HashAlgorithms"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DES\r\nTripleDES\r\nRC2\r\nRijndael\r\nRSA")]
+        public string EncryptionAlgorithms {
+            get {
+                return ((string)(this["EncryptionAlgorithms"]));
+            }
+            set {
+                this["EncryptionAlgorithms"] = value;
+            }
+        }
     }
 }
