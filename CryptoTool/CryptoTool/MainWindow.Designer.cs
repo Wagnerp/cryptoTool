@@ -44,6 +44,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.mainWindowTabControl = new System.Windows.Forms.TabControl();
             this.encryptionTabPage = new System.Windows.Forms.TabPage();
+            this.decryptButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.outputFileTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.keyTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.passwordButton = new System.Windows.Forms.Button();
+            this.autoKeyButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.encryptButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.encryptComboBox = new System.Windows.Forms.ComboBox();
@@ -51,21 +62,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.inputFilePathLabel = new System.Windows.Forms.Label();
             this.hashCheckerTabPage = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.keyTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.autoKeyButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.outputFileTextBox = new System.Windows.Forms.TextBox();
-            this.decryptButton = new System.Windows.Forms.Button();
             this.mainWindowTabControl.SuspendLayout();
             this.encryptionTabPage.SuspendLayout();
-            this.hashCheckerTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.hashCheckerTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileChecksumBtn
@@ -228,6 +228,109 @@
             this.encryptionTabPage.Text = "File Encryption / Decryption";
             this.encryptionTabPage.UseVisualStyleBackColor = true;
             // 
+            // decryptButton
+            // 
+            this.decryptButton.Location = new System.Drawing.Point(260, 333);
+            this.decryptButton.Name = "decryptButton";
+            this.decryptButton.Size = new System.Drawing.Size(72, 23);
+            this.decryptButton.TabIndex = 17;
+            this.decryptButton.Text = "Decrypt";
+            this.decryptButton.UseVisualStyleBackColor = true;
+            this.decryptButton.Click += new System.EventHandler(this.decryptButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 281);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(387, 13);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Output File Name (Ex. outfile.exe, outfile.enc, or 5fh56d9772d1f33dr8978g, etc.):" +
+                "";
+            // 
+            // outputFileTextBox
+            // 
+            this.outputFileTextBox.Location = new System.Drawing.Point(19, 297);
+            this.outputFileTextBox.Name = "outputFileTextBox";
+            this.outputFileTextBox.Size = new System.Drawing.Size(446, 20);
+            this.outputFileTextBox.TabIndex = 16;
+            this.outputFileTextBox.Text = "outfile.enc";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 233);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(144, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Secret Key (Protect this key):";
+            // 
+            // keyTextBox
+            // 
+            this.keyTextBox.Location = new System.Drawing.Point(19, 249);
+            this.keyTextBox.Name = "keyTextBox";
+            this.keyTextBox.Size = new System.Drawing.Size(446, 20);
+            this.keyTextBox.TabIndex = 14;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.passwordButton);
+            this.groupBox1.Controls.Add(this.autoKeyButton);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.passwordTextBox);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Location = new System.Drawing.Point(9, 121);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(468, 94);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Key Generation Methods";
+            // 
+            // passwordButton
+            // 
+            this.passwordButton.Location = new System.Drawing.Point(10, 63);
+            this.passwordButton.Name = "passwordButton";
+            this.passwordButton.Size = new System.Drawing.Size(160, 23);
+            this.passwordButton.TabIndex = 4;
+            this.passwordButton.Text = "Generate Key From Password";
+            this.passwordButton.UseVisualStyleBackColor = true;
+            this.passwordButton.Click += new System.EventHandler(this.passwordButton_Click);
+            // 
+            // autoKeyButton
+            // 
+            this.autoKeyButton.Location = new System.Drawing.Point(300, 37);
+            this.autoKeyButton.Name = "autoKeyButton";
+            this.autoKeyButton.Size = new System.Drawing.Size(133, 23);
+            this.autoKeyButton.TabIndex = 3;
+            this.autoKeyButton.Text = "Auto Generate Key";
+            this.autoKeyButton.UseVisualStyleBackColor = true;
+            this.autoKeyButton.Click += new System.EventHandler(this.autoKeyButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(297, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(159, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Method 2 (Auto-key generation):";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(10, 37);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(254, 20);
+            this.passwordTextBox.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Method 1 (Password):";
+            // 
             // encryptButton
             // 
             this.encryptButton.Location = new System.Drawing.Point(150, 333);
@@ -307,108 +410,6 @@
             this.hashCheckerTabPage.Text = "File Hash Checker";
             this.hashCheckerTabPage.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.autoKeyButton);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.passwordTextBox);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(9, 121);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 94);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Key Generation Methods";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Method 1 (Password):";
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(10, 37);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(254, 20);
-            this.passwordTextBox.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(297, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(159, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Method 2 (Auto-key generation):";
-            // 
-            // keyTextBox
-            // 
-            this.keyTextBox.Location = new System.Drawing.Point(19, 249);
-            this.keyTextBox.Name = "keyTextBox";
-            this.keyTextBox.Size = new System.Drawing.Size(446, 20);
-            this.keyTextBox.TabIndex = 14;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 233);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Secret Key (Protect this key):";
-            // 
-            // autoKeyButton
-            // 
-            this.autoKeyButton.Location = new System.Drawing.Point(300, 37);
-            this.autoKeyButton.Name = "autoKeyButton";
-            this.autoKeyButton.Size = new System.Drawing.Size(133, 23);
-            this.autoKeyButton.TabIndex = 3;
-            this.autoKeyButton.Text = "Auto Generate Key";
-            this.autoKeyButton.UseVisualStyleBackColor = true;
-            this.autoKeyButton.Click += new System.EventHandler(this.autoKeyButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Generate Key From Password";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 281);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(387, 13);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Output File Name (Ex. outfile.exe, outfile.enc, or 5fh56d9772d1f33dr8978g, etc.):" +
-                "";
-            // 
-            // outputFileTextBox
-            // 
-            this.outputFileTextBox.Location = new System.Drawing.Point(19, 297);
-            this.outputFileTextBox.Name = "outputFileTextBox";
-            this.outputFileTextBox.Size = new System.Drawing.Size(446, 20);
-            this.outputFileTextBox.TabIndex = 16;
-            this.outputFileTextBox.Text = "outfile.enc";
-            // 
-            // decryptButton
-            // 
-            this.decryptButton.Location = new System.Drawing.Point(260, 333);
-            this.decryptButton.Name = "decryptButton";
-            this.decryptButton.Size = new System.Drawing.Size(72, 23);
-            this.decryptButton.TabIndex = 17;
-            this.decryptButton.Text = "Decrypt";
-            this.decryptButton.UseVisualStyleBackColor = true;
-            this.decryptButton.Click += new System.EventHandler(this.decryptButton_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,10 +421,10 @@
             this.mainWindowTabControl.ResumeLayout(false);
             this.encryptionTabPage.ResumeLayout(false);
             this.encryptionTabPage.PerformLayout();
-            this.hashCheckerTabPage.ResumeLayout(false);
-            this.hashCheckerTabPage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.hashCheckerTabPage.ResumeLayout(false);
+            this.hashCheckerTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -458,7 +459,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox keyTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button passwordButton;
         private System.Windows.Forms.Button autoKeyButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox passwordTextBox;

@@ -14,7 +14,8 @@ SHA512</Value>
 TripleDES
 RC2
 Rijndael
-RSA</Value>
+RSA
+DSA</Value>
     </Setting>
   </Settings>
 </SettingsFile>

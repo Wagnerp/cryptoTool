@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace CryptoTool
 {
@@ -120,6 +121,17 @@ namespace CryptoTool
             keyTextBox.Text = key;
         }
 
+        private void passwordButton_Click(object sender, EventArgs e)
+        {
+            PasswordDeriveBytes pdb = new PasswordDeriveBytes(passwordTextBox.Text, 
+                new byte[] {0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 
+                0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76}); 
+
+            byte[] passBytes = pdb.GetBytes(32);
+            string key = Conversions.ToHex(passBytes);
+            keyTextBox.Text = key;
+        }
+
         private void encryptButton_Click(object sender, EventArgs e)
         {
             try
@@ -127,7 +139,9 @@ namespace CryptoTool
                 if (fileEncryptSelected)
                     if (encryptTypeSelected)
                     {
-                        FileEncryption.EncryptFile(inputFilePathLabel.Text,
+                        //FileEncryption.EncryptFile(inputFilePathLabel.Text,
+                        //   outputFileTextBox.Text, keyTextBox.Text);
+                        FileEncryption.Encrypt(inputFilePathLabel.Text,
                            outputFileTextBox.Text, keyTextBox.Text);
                         MessageBox.Show("Success!");
                     }
@@ -155,7 +169,9 @@ namespace CryptoTool
                 if (fileEncryptSelected)
                     if (encryptTypeSelected)
                     {
-                        FileEncryption.DecryptFile(inputFilePathLabel.Text,
+                        //FileEncryption.DecryptFile(inputFilePathLabel.Text,
+                        //   outputFileTextBox.Text, keyTextBox.Text);
+                        FileEncryption.Decrypt(inputFilePathLabel.Text,
                            outputFileTextBox.Text, keyTextBox.Text);
                         MessageBox.Show("Success!");
                     }
