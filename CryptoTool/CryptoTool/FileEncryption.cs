@@ -9,27 +9,55 @@ namespace CryptoTool
 {
     public static class FileEncryption
     {
-        /*DES
-        TripleDES
-        RC2
-        Rijndael
-        RSA
-        DSA
-        */
+        public enum EncryptionMethod
+        {
+            DES,
+            TripleDES,
+            RC2,
+            Rijndael,
+            RSA,
+            DSA
+        };
 
         //  Call this function to remove the key from memory after use for security
         [System.Runtime.InteropServices.DllImport("KERNEL32.DLL", EntryPoint = "RtlZeroMemory")]
         public static extern bool ZeroMemory(IntPtr Destination, int Length);
 
         // Function to Generate a Key.
-        public static string AutoGenerateKey()
+        public static string AutoGenerateKey(EncryptionMethod method)
         {
-            // Create an instance of Symetric Algorithm. Key and IV is generated automatically.
+            //***************** use encryptionMethod to specify which algorithm
+            if (algorithmType(method) == "symmetric")
+                return Conversions.ToHex(symAlgorithm(method).Key);
+            //else
+            //    return Conversions.ToHex(asymAlgorithm(method).KeySize);
+
+            // Create an instance of Symmetric Algorithm. Key and IV is generated automatically.
             Rijndael crypto = Rijndael.Create();
             //DESCryptoServiceProvider desCrypto = (DESCryptoServiceProvider)DESCryptoServiceProvider.Create();
 
             // Use the Automatically generated key for Encryption. 
             return Conversions.ToHex(crypto.Key);//ASCIIEncoding.ASCII.GetString(crypto.Key);//desCrypto.Key);
+        }
+
+        private static string algorithmType(EncryptionMethod method)
+        {
+            string symOrAsym = "symmetric";
+            //********
+
+            return symOrAsym;
+        }
+
+        private static SymmetricAlgorithm symAlgorithm(EncryptionMethod method)
+        {
+            //**************
+            return Rijndael.Create();
+        }
+
+        private static AsymmetricAlgorithm asymAlgorithm(EncryptionMethod method)
+        {
+            //*****************
+            return RSA.Create();
         }
 
         // Encrypt a byte array into a byte array using a key and an IV 

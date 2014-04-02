@@ -16,6 +16,7 @@ namespace CryptoTool
         private bool fileEncryptSelected = false;
         private bool hashTypeSelected = false;
         private bool encryptTypeSelected = false;
+        private FileEncryption.EncryptionMethod encrpytionMethod;
 
         public MainWindow()
         {
@@ -69,6 +70,13 @@ namespace CryptoTool
         private void encryptComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             encryptTypeSelected = true;
+            string comboMethod = encryptComboBox.Text;
+            
+            // Determine which EncryptionMethod the comboBox is showing
+            if(Enum.IsDefined(typeof(FileEncryption.EncryptionMethod),comboMethod))
+                encrpytionMethod = 
+                    (FileEncryption.EncryptionMethod)Enum.Parse(typeof(FileEncryption.EncryptionMethod),
+                    comboMethod,true);
         }
 
         private void hashComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,19 +125,37 @@ namespace CryptoTool
 
         private void autoKeyButton_Click(object sender, EventArgs e)
         {
-            string key = FileEncryption.AutoGenerateKey();
-            keyTextBox.Text = key;
+            if (encryptTypeSelected)
+            {                
+                string key = FileEncryption.AutoGenerateKey(encrpytionMethod);
+                keyTextBox.Text = key;
+            }
+            else
+            {
+                MessageBox.Show("You must select an encryption method before generating the key.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void passwordButton_Click(object sender, EventArgs e)
         {
-            PasswordDeriveBytes pdb = new PasswordDeriveBytes(passwordTextBox.Text, 
-                new byte[] {0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 
-                0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76}); 
+            if (encryptTypeSelected)
+            {
+                PasswordDeriveBytes pdb = new PasswordDeriveBytes(passwordTextBox.Text,
+                    new byte[] {0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 
+                0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76});
 
-            byte[] passBytes = pdb.GetBytes(32);
-            string key = Conversions.ToHex(passBytes);
-            keyTextBox.Text = key;
+                //***************** use encryptionMethod to determine number of bytes long a key must be
+
+                byte[] passBytes = pdb.GetBytes(32);
+                string key = Conversions.ToHex(passBytes);
+                keyTextBox.Text = key;
+            }
+            else
+            {
+                MessageBox.Show("You must select an encryption method before generating the key.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void encryptButton_Click(object sender, EventArgs e)

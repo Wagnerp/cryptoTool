@@ -7,4 +7,4 @@ Allow for a user inputted password to generate the key. The key can be generated
 
 Allow for the user to save the key in a file for later use.
 
-***Be able to handle file type other than just plain text. I think the key to doing this is by using a different encoding than ASCII when reading in those type of files.
+Use the EncryptionMethod enumerator to determine which algorithm to use. may be able to associate symmetric and assymetric with the enumerator values. Also use it to determine the number of bytes needed to generate a byte array for the password method (line 148 in MainWindow.cs).
